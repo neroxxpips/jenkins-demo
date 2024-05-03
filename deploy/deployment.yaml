@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jenkins-demo-app
+  name: jenkins-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-demo-app
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jenkins-demo-app
+    spec:
+      containers:
+      - image: neroxxpips/jenkins-demo:latest
+        name: jenkins-demo-app
+        ports:
+            - containerPort: 3000
+
