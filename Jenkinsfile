@@ -28,9 +28,11 @@ pipeline {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                     script {
-                        sh('aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION')
-                        sh('kubectl get node')
-                        sh('kubectl create deployment jenkins-demo --image=neroxxpips/jenkins-demo:latest')
+                        sh """
+                        aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+                        kubectl get node
+                        kubectl create deployment jenkins-demo --image=neroxxpips/jenkins-demo:latest
+                        """
                     }
                 }
             }
