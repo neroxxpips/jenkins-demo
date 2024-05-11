@@ -4,23 +4,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: jenkins-demo
-  name: jenkins-demo
+    app: actions-demo
+  name: actions-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins-demo
+      app: actions-demo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: jenkins-demo
+        app: actions-demo
     spec:
       containers:
-      - image: neroxxpips/jenkins-demo:latest
-        name: jenkins-demo
+      - image: neroxxpips/actions-demo:latest
+        name: actions-demo
         ports:
             - containerPort: 3000
         resources: {}
