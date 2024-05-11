@@ -31,7 +31,8 @@ pipeline {
                         sh """
                         aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
                         kubectl get node
-                        kubectl create deployment jenkins-demo --image=neroxxpips/jenkins-demo:latest
+                        kubectl apply -f deploy/deployment.yaml
+                        kubectl apply -f deploy/service.yaml
                         """
                     }
                 }
