@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: jenkins-demo
-  name: jenkins-demo
+  name: jenkins-demo-svc
 spec:
   type: LoadBalancer
   ports:
